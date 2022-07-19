@@ -1,0 +1,39 @@
+<div class="container">
+    <form [formGroup]="signupFormData" (ngSubmit)="onSignupButton()">
+        <div class="heading">
+            <h2 class="text-center display-4">SignUp</h2>
+            <hr>
+            <br>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" class="form-control"  placeholder="Enter Full Name" formControlName="name" required>
+            <div class="text-danger" *ngIf="signupFormData.controls['name'].dirty && signupFormData.hasError('required','name')">*Name is Required</div>
+          </div>
+
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control"  placeholder="Enter email" formControlName="email" required>
+          <div class="text-danger" *ngIf="signupFormData.controls['email'].dirty && signupFormData.hasError('required','email')">*Email is Required</div>
+          </div>
+        
+
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="number" class="form-control" placeholder="Enter Your Phone Number" formControlName="phone" required>
+            <div class="text-danger" *ngIf="signupFormData.controls['phone'].dirty && signupFormData.hasError('required','phone')">*Phone is Required</div>
+          </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control"  placeholder="Password" formControlName="password" minlength="8" required>
+          <div class="text-danger" *ngIf="signupFormData.controls['password'].dirty && signupFormData.hasError('required','password')">*Password is Required</div>
+        </div>
+          
+        <button type="submit" class="btn btn-primary" [disabled]="!signupFormData.valid">Submit</button>
+        <a routerLink="/login">I Already Have an Account! </a>
+      </form>
+</div>
+

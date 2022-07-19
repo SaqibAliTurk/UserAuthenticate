@@ -1,0 +1,30 @@
+<div class="container">
+  
+ 
+    <form [formGroup]="loginFormData" (ngSubmit)="onLoginButton()">
+        <div class="heading">
+            <h2 class="text-center display-4">Login</h2>
+            <hr>
+            <br>
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" placeholder="Enter email" formControlName="email">
+          <div class="text-danger" *ngIf="loginFormData.controls['email'].dirty && loginFormData.hasError('required','email')">*Enter Email</div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" placeholder="Password" formControlName="password" minlength="8">
+          <div class="text-danger" *ngIf="loginFormData.controls['password'].dirty && loginFormData.hasError('required','password')">*Enter Password</div>
+
+    
+        </div>
+        
+        <button type="submit" class="btn btn-primary" [disabled]="!loginFormData.valid">Login</button>
+        <a routerLink="/signup">Don't have an Account? Click Here </a>
+
+      </form>
+
+      
+</div>

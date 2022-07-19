@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    margin-top: 11vh;
+    width: 313px;
+    width: 476px;
+    padding: 18px;
+    border-radius: 20px;
+    box-shadow: 2px 1px 20px 1px deepskyblue;
+}
+a{
+    margin-left: 21px;
+}
